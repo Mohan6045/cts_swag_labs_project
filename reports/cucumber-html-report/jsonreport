@@ -1,0 +1,366 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 10,
+        "name": "Login with valid data",
+        "description": "",
+        "id": "swags-labs;login-with-valid-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 18027124200,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Browser is launched \u0026 login page displayed",
+            "match": {
+              "location": "testcucum.browser_is_launched_login_page_displayed()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 78696383400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User enters valid login credentials  of set 0 \u0026 clicks on login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 44
+                }
+              ],
+              "location": "testcucum.user_enters_valid_login_credentials_of_set_clicks_on_login(int)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2458869700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Navigates to product page",
+            "match": {
+              "location": "testcucum.navigates_to_product_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 11,
+        "name": "Login with valid data",
+        "description": "",
+        "id": "swags-labs;login-with-valid-data;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 17088756100,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Browser is launched \u0026 login page displayed",
+            "match": {
+              "location": "testcucum.browser_is_launched_login_page_displayed()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 80158811500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User enters valid login credentials  of set 1 \u0026 clicks on login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 44
+                }
+              ],
+              "location": "testcucum.user_enters_valid_login_credentials_of_set_clicks_on_login(int)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2111105700,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Navigates to product page",
+            "match": {
+              "location": "testcucum.navigates_to_product_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 23,
+        "name": "Login with Invalid data",
+        "description": "",
+        "id": "swags-labs;login-with-invalid-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 16518777600,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Browser is launched \u0026 login page displayed",
+            "match": {
+              "location": "testcucum.browser_is_launched_login_page_displayed()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5034554300,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User enters Invalid login credentials  of set 2 \u0026 clicks on login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 46
+                }
+              ],
+              "location": "testcucum.user_enters_Invalid_login_credentials_of_set_clicks_on_login(int)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 787000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Display an Error message with Invalid credentials",
+            "match": {
+              "location": "testcucum.display_an_Error_message_with_Invalid_credentials()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 24,
+        "name": "Login with Invalid data",
+        "description": "",
+        "id": "swags-labs;login-with-invalid-data;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 15244877500,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "Browser is launched \u0026 login page displayed",
+            "match": {
+              "location": "testcucum.browser_is_launched_login_page_displayed()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5126805000,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User enters Invalid login credentials  of set 3 \u0026 clicks on login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "3",
+                  "offset": 46
+                }
+              ],
+              "location": "testcucum.user_enters_Invalid_login_credentials_of_set_clicks_on_login(int)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 779000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "Display an Error message with Invalid credentials",
+            "match": {
+              "location": "testcucum.display_an_Error_message_with_Invalid_credentials()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 38,
+        "name": "Adding all items to the cart with valid data",
+        "description": "",
+        "id": "swags-labs;adding-all-items-to-the-cart-with-valid-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 17767956500,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Browser is launched \u0026 login page displayed",
+            "match": {
+              "location": "testcucum.browser_is_launched_login_page_displayed()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 83749154600,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "User enters valid login credentials  of set 0 \u0026 clicks on login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 44
+                }
+              ],
+              "location": "testcucum.user_enters_valid_login_credentials_of_set_clicks_on_login(int)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2453639300,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "Select the Name AtoZ and Add to Cart the items",
+            "match": {
+              "location": "testcucum.select_the_Name_AtoZ_and_Add_to_Cart_the_items()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 77063828600,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "Moving to About page and Click the Learn_More",
+            "match": {
+              "location": "testcucum.moving_to_About_page_and_Click_the_Learn_More()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 48,
+        "name": "Adding all items to the cart with valid data",
+        "description": "",
+        "id": "swags-labs;adding-all-items-to-the-cart-with-valid-data;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 19923681700,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "Browser is launched \u0026 login page displayed",
+            "match": {
+              "location": "testcucum.browser_is_launched_login_page_displayed()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 62546375100,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "User enters valid login credentials  of set 0 \u0026 clicks on login",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 44
+                }
+              ],
+              "location": "testcucum.user_enters_valid_login_credentials_of_set_clicks_on_login(int)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2565696700,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "Select the Name AtoZ and Add to Cart the items",
+            "match": {
+              "location": "testcucum.select_the_Name_AtoZ_and_Add_to_Cart_the_items()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3296781900,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "Verifying the first_product name and price",
+            "match": {
+              "location": "testcucum.Verifying_the_first_product_name_and_price()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Swags_Labs",
+    "description": "",
+    "id": "swags-labs",
+    "keyword": "Feature",
+    "uri": "Swag_labs.feature"
+  }
+]

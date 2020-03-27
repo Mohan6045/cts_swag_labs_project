@@ -9,18 +9,20 @@ public class AddtoCart_Page {
 	
 	
 	
-	WebDriver dr;
+	WebDriver driver;
 	int count=0;
-	public AddtoCart_Page(WebDriver dr)
+	public String productname1;
+	public String price1;
+	public AddtoCart_Page(WebDriver driver)
 	{
-		this.dr=dr;
+		this.driver=driver;
 	}
 	
 	
 	public void SearchA2Z() {               // selecting the Name (A to Z)
 		
 		
-		WebElement wb=dr.findElement(By.xpath("//select[@class='product_sort_container']"));        
+		WebElement wb=driver.findElement(By.xpath("//select[@class='product_sort_container']"));        
 		Select DD=new Select(wb);
 		DD.selectByVisibleText("Name (A to Z)");
 		
@@ -33,15 +35,22 @@ public class AddtoCart_Page {
 		for(int i=1;i<=6;i++)
 		{
 			count++;
-			dr.findElement(By.xpath("//div[@class='inventory_item']["+i+"]//following::button")).click();
+			driver.findElement(By.xpath("//div[@class='inventory_item']["+i+"]//following::button")).click();
 		}
 		
+	}
+	public void LinkCart() 
+	{
+		
+		driver.findElement(By.xpath("//a[@href=\"./cart.html\"]")).click();    // clicking on cart link
+		productname1=  driver.findElement(By.xpath("//div[text()='Sauce Labs Backpack']")).getText();   //   getting first product name
+		price1=driver.findElement(By.xpath("//div[text()='29.99']")).getText();   // getting first price name
 	}
 	
 	
 	public void verify_AddtoCart() throws InterruptedException {
 		Thread.sleep(200);
-		String num=dr.findElement(By.xpath("//a[@href='./cart.html']//span")).getText();
+		String num=driver.findElement(By.xpath("//a[@href='./cart.html']//span")).getText();
 		int TotalAdding=Integer.parseInt(num);
 		if(count==TotalAdding)
 		{

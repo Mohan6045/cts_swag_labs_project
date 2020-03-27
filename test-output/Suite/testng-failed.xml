@@ -3,13 +3,20 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Runner_PKG.TestRunner12">
+      <class name="Runner_PKG_Chrome.TestRunner12">
         <methods>
           <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
+          <include name="feature"/>
           <include name="tearDownClass"/>
         </methods>
-      </class> <!-- Runner_PKG.TestRunner12 -->
+      </class> <!-- Runner_PKG_Chrome.TestRunner12 -->
+      <class name="Runner_PKG_FireFox.TestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- Runner_PKG_FireFox.TestRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

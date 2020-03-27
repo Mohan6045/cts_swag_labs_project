@@ -18,10 +18,10 @@ public class Login_page  extends  WrapperClass{           //   Login page
 	public String Products;
 	public String Error;
 	
-	 WebDriver dr;
-	public Login_page(WebDriver dr)
+	 WebDriver driver;
+	public Login_page(WebDriver driver)
 	{
-		this.dr=dr;
+		this.driver=driver;
 	}
 	
 	public void Username(String  name)        //   Entering Username

@@ -17,15 +17,15 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class testcucum extends Get_Excel{
-	static WebDriver dr;
+	static WebDriver driver;
 	Login_page Ln;
 	
 	static final Logger log = Logger.getLogger(testcucum.class);
 	@Given("^Browser is launched & login page displayed$")
 	public void browser_is_launched_login_page_displayed()  {
 		get_Excel();
-		 dr=WrapperClass.Launch_browser("FIREFOX","https://www.saucedemo.com/");
-		 dr.manage().window().maximize();
+		driver=WrapperClass.Launch_browser("FIREFOX","https://www.saucedemo.com/");
+		driver.manage().window().maximize();
 		 log.info(" FIREFOX Browser is Successfully launched");
 
 	    
@@ -38,8 +38,8 @@ public class testcucum extends Get_Excel{
 		int row=arg1;
 		String Username=testdata[row][0];
 		String Password=testdata[row][1];
-		dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		  Ln=new Login_page(dr);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		  Ln=new Login_page(driver);
 		  System.out.println(Username+" "+Password);
 		Ln.Total_Login(Username,Password);
 		log.info("succesfully login is happened with valid data");
@@ -55,7 +55,20 @@ public class testcucum extends Get_Excel{
 		System.out.println("Sucessfully navigated to "+Ln.Products+" page");
 		log.info("Sucessfully navigated to products page");
 		log.info("-----------------------------------");
-		dr.close();
+		driver.close();
+	}
+	
+	
+	@Then("^Verifying the first_product name and price$")
+	public void Verifying_the_first_product_name_and_price() {
+		 AddtoCart_Page A1=new AddtoCart_Page(driver);
+		 A1.LinkCart();
+		 String product_name=A1.productname1;
+			String price=A1.price1;
+			String product_price=product_name.concat(" "+price);
+			log.info(product_price);
+			log.info(product_price+"price and product name is verified");	
+			driver.close();
 	}
 	
 	
@@ -68,13 +81,13 @@ public class testcucum extends Get_Excel{
 			int row=arg1;
 			String Username=testdata[row][0];
 			String Password=testdata[row][1];
-			dr.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			  Ln=new Login_page(dr);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			  Ln=new Login_page(driver);
 			  System.out.println(Username+" "+Password);
 			Ln.Total_Login(Username,Password);
 			log.info("Entered invalid data in login form");
 			
-			dr.close();
+			driver.close();
 		}
 
 		@Then("^Display an Error message with Invalid credentials$")
@@ -88,7 +101,7 @@ public class testcucum extends Get_Excel{
 		public void select_the_Name_AtoZ_and_Add_to_Cart_the_items() throws InterruptedException  {
 			System.out.println("successful login happens & profile name displayed correctly");
 			
-			 AddtoCart_Page A1=new AddtoCart_Page(dr);
+			 AddtoCart_Page A1=new AddtoCart_Page(driver);
 			  A1.SearchA2Z();
 			  A1.Addtocart_btn();
 			  A1.verify_AddtoCart();
@@ -101,14 +114,14 @@ public class testcucum extends Get_Excel{
 			
 			@Then("^Moving to About page and Click the Learn_More$")
 			public void moving_to_About_page_and_Click_the_Learn_More() throws InterruptedException {
-				 About_Page A2=new About_Page(dr);
+				 About_Page A2=new About_Page(driver);
 				  A2.link_for_aboutpage();
 				  log.info("succesfully navigated to home page ");
 				  A2.About_Saucedemo();
 				  A2.any_btn();
 				Thread.sleep(200);
 				log.info("-----------------------------------");
-				dr.close();
+				driver.close();
 				  
 			}
 		

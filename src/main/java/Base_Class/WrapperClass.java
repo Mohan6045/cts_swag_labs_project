@@ -15,31 +15,29 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WrapperClass {
-	static WebDriver dr;
+	static WebDriver driver;
 	WebElement wb1;
 	static int counter=0;
 
 	public static WebDriver Launch_browser(String browser,String url)
 	{
-		//String ch1="C:\\Users\\BLTuser.BLT0189\\eclipse-workspace\\CTS_maven_125\\src\\test\\resources\\DRIVER"
 		
-		switch(browser)
+		
+		if(browser.contains("CHROME"))  //  chrome browser
 		{
-		case "CHROME":
+		
 			System.setProperty("webdriver.chrome.driver","src\\test\\resources\\Driver\\chromedriver.exe");
-			dr=new ChromeDriver();
-		break;
-		case "FIREFOX":
-			System.setProperty("webdriver.gecko.driver","src\\test\\resources\\Driver\\geckodriver.exe");
-			dr=new FirefoxDriver();
-		break;
+			driver=new ChromeDriver();
 			
 		}
+		else {                      // firefox browser
+			System.setProperty("webdriver.gecko.driver","src\\test\\resources\\Driver\\geckodriver.exe");
+			driver=new FirefoxDriver();
+			
+		}
+		driver.get(url);
 		
-		dr.get(url);
-		
-		
-		return dr;
+		return driver;
 	}
 	
 	
@@ -48,7 +46,7 @@ public class WrapperClass {
 		
 		try
 		{
-		WebDriverWait WDW= new WebDriverWait(dr,timeout);
+		WebDriverWait WDW= new WebDriverWait(driver,timeout);
 		 wb1=WDW.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		 return wb1;
 		}
@@ -67,7 +65,7 @@ public class WrapperClass {
 		
 		try
 		{
-		WebDriverWait WDW= new WebDriverWait(dr,timeout);
+		WebDriverWait WDW= new WebDriverWait(driver,timeout);
 		 wb1=WDW.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		 return wb1;
 		}
@@ -85,7 +83,7 @@ public class WrapperClass {
 		String path="src\\test\\resources\\ScreenShot\\";
 		String filename=counter+".png";
 		
-		File f1=((TakesScreenshot)dr).getScreenshotAs(OutputType.FILE);		
+		File f1=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);		
 		 File f2= new File(path+filename);
 		 try {
 			FileUtils.copyFile(f1, f2);
